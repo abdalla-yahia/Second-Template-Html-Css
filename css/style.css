@@ -1254,3 +1254,56 @@ flex-direction: column;
     }
 }
 /*End Subscribe*/
+
+/*Start Contact Us */
+.contact .container
+{
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    flex-wrap: wrap;
+
+}
+@media (max-width:767px) {
+    .contact .container
+{
+    display: flex;
+    grid-template-columns: 1fr 300px;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+
+}
+}
+.contact .container form
+{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+.contact .container form input[type='text'],
+.contact .container form input[type='email'],
+.contact .container form textarea
+{
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.contact .container form input[type='submit']
+{
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+    color: white;
+    position: absolute;
+    bottom:-50px;
+    right: 20px;
+    padding: 20px;
+    text-transform: uppercase;
+}
+.contact .contact-text
+{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+/*End Contact Us */
