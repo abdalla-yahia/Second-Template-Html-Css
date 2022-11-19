@@ -1396,13 +1396,10 @@ footer .container ul li
 {
     margin-left: 20px;
 }
-
-footer .container div span
+footer .container div span,a
 {
     color: var(--main-color);
+    text-decoration: none;
 }
-
-
-
 
 /*End Footer*/
