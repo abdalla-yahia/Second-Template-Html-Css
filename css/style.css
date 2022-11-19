@@ -18,10 +18,7 @@ html
 }
 body
 {
-    font-family: 'Cairo', sans-serif;
     font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Work Sans', sans-serif;
 }
 .container
 {
@@ -31,6 +28,18 @@ body
     height: fit-content;
     padding: 15px;
 
+}
+@media (max-width:400px) {
+    .container
+{
+    width: 90%;
+    height: fit-content;
+    padding: 15px;
+
+}
+}
+section{
+    margin: 0;
 }
 /*Start main Title*/
 .main-title
@@ -199,9 +208,10 @@ header nav .toggle-menu:hover
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        width: 100%;
+        max-width: 100%;
         top: 100%;
-        left: 0;
+        left: 10%;
+        right: 10%;
         padding: 20px;
         height: auto;
         background-color: rgba(0 0 0 /50%);
@@ -215,7 +225,7 @@ header nav .toggle-menu:hover
     header nav ul li
     {
         text-align: left;
-        width: 100%;
+        max-width: 100%;
     }
     header nav .toggle-menu
     {
@@ -347,7 +357,13 @@ header nav .toggle-menu:hover
 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-gap: 100px;
+}
+@media (max-width:400px) {
+    .services .container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
 }
 .services .container .services-box
 {
@@ -358,7 +374,6 @@ header nav .toggle-menu:hover
 .services .container .services-box i
 {
     margin-right: 30px;
-    flex: 1;
 }
 .services .container .services-box .services-text h3
 {
@@ -395,7 +410,7 @@ header nav .toggle-menu:hover
 }
 .services .container .services-box p
 {
-    width: 450px;
+    max-width: 350px;
 }
 .services .container .services-box i
 {
@@ -408,12 +423,11 @@ header nav .toggle-menu:hover
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    max-width: 450px;
+    max-width: 400px;
 }
 .services .container .services-box i
 {
     margin-right: 30px;
-    flex: 1;
 }
 .services .container .services-box p
 {
@@ -471,6 +485,15 @@ header nav .toggle-menu:hover
     .design .main-div
 {
     width: 100%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    
+}
+.design .main-div h1
+{
+    font-weight: 400;
+    font-size: 12px;
 }
 .design .design-image 
 {
@@ -536,6 +559,13 @@ display: flex;
 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+}
+@media (max-width:400px) {
+    .portfolio .shufle
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+}
 }
 .portfolio .shufle .shufle-box
 {
@@ -689,7 +719,7 @@ display: flex;
 {
     background-color: black;
     color: white;
-    width: 100px;
+    max-width: 100px;
     height: 50px;
     font-size: 10px;
     margin-bottom: 10px;
@@ -789,6 +819,12 @@ display: flex;
 @media (min-width:990px) {
     .skills .container{
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        justify-content: space-evenly;
+    }
+}
+@media (max-width:400px) {
+    .skills .container{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         justify-content: space-evenly;
     }
 }
@@ -973,7 +1009,7 @@ display: flex;
 /*Start Quotes*/
 .quotes 
 {
-    width: 100%;
+    max-width: 100%;
     height: 250px;
     position: relative;
     background-image: url('../images/quote.jpg');
@@ -981,14 +1017,15 @@ display: flex;
     background-size: cover;
     text-align: center;
 }
-.quotes .quotes-cover
+.quotes::before
 {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.801);
-    position: absolute;
-
-    
+    background-color: rgba(0, 0, 0, 0.616);
 }
 .quotes .quotes-text
 {
@@ -1255,19 +1292,17 @@ flex-direction: column;
 }
 /*End Subscribe*/
 
-/*Start Contact Us */
+/*Start Contact Us Section*/
 .contact .container
 {
     display: grid;
-    grid-template-columns: 1fr 300px;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(550px,1fr ));
 
 }
 @media (max-width:767px) {
     .contact .container
 {
     display: flex;
-    grid-template-columns: 1fr 300px;
     flex-wrap: wrap;
     flex-direction: column-reverse;
 
@@ -1279,6 +1314,7 @@ flex-direction: column;
     flex-direction: column;
     padding: 20px;
     position: relative;
+    max-width: 100%;
 }
 .contact .container form input[type='text'],
 .contact .container form input[type='email'],
